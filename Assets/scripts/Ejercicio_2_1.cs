@@ -5,8 +5,16 @@ using UnityEngine.Video;
 
 public class Ejercicio_2_1 : MonoBehaviour
 {
-   
-    
+    //RECUERDA: usa siempre [SerializeField] en vez de public en una variable o método que quieras usar (salvo por casos especiales)
+
+    int puntosDeValentia = 12;
+    int puntosDeIntuicion = 14;
+    int puntosDeInteligencia = 15;
+
+    int vidasPlayer1 = 1;
+    int vidasPlayer2 = 2;
+    int vidasPlayer3 = 5;
+    int vidasPlayer4 = 10;
     char carac;
     float exp = 3.1f;
     int pocion = 7;
@@ -14,10 +22,10 @@ public class Ejercicio_2_1 : MonoBehaviour
     // si la variable vida fuera int y se sumara con la variable char, darían error y no
     // se podría ejecutar el juego
 
-
+    public string clase = "mago";
     int edad = 10;
     float altura = 1.85f;
-    string nombre = "Dan";
+    [SerializeField] string nombre = "Dan";//nota: public muestra las variables y se pueden modificar; serializedfield solo se puede mostrar en unity a aquellos objetos que contengan este script.
     float iva = 3.5f;//valores en % a aplicar
     float peso = 5.75f;
     bool AlumnoRepetidor = false;
@@ -35,6 +43,8 @@ public class Ejercicio_2_1 : MonoBehaviour
     int dias = 1000;
     int contador = 1;
     char tallaCamiseta = 'L';
+
+
 
 
     // Start is called before the first frame update
@@ -62,13 +72,54 @@ public class Ejercicio_2_1 : MonoBehaviour
         float tripleDeExp= exp *= 3;
         Debug.Log("El triple de experiencia = " + tripleDeExp);
 
+        int puntosDeResurreccion = revive() + contador;//junto con "return" en el metodo variable "revive", puedes usar la variable "revive" en otra variable como un dato o valor
+        //ES OBLIGATORIO QUE ESTÉ RETURN DENTRO DEL METODO VARIABLE DESEADO PARA QUE ESTO FUNCIONE.
+
+        Debug.Log("-----------------------------");
+
+        vidas += 77;
+        Debug.Log("vidas: " + vidas);
+        vidas -= 3;
+        Debug.Log("vidas: " + vidas);
+        vidas *= 2;
+        Debug.Log("vidas: " + vidas);
+
+        Debug.Log("-----------------------------");
+
+        vidasPlayer2 = vidasPlayer3;
+        Debug.Log("vidas de player2= " + vidasPlayer2);
+        vidasPlayer3 = vidasPlayer1;
+        Debug.Log("vidas de player3= " + vidasPlayer3);
+        vidasPlayer1 = vidasPlayer4;
+        Debug.Log("vidas de player1= " + vidasPlayer1);
+        vidasPlayer4 = vidasPlayer2;
+        Debug.Log("vidas de player4= " + vidasPlayer4);
+
+        Debug.Log("-----------------------------");
+        Debug.Log("vidas de player4= " + vidasPlayer4);
+        //IMPORTANTE (EJERCICIO 2.6): PARA CALCULAR LA MEDIA, DEBES SUMAR TODOS LOS VALORES Y DIVIDIR EL RESULTADO POR EL NUMERO DE VALORES
+
+
+
+
 
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()//update y start se ejecutan automáticamente; el resto de métodos no lo hacen
     {
         //Debug.Log("Ha pasado un frame");//Este mensaje aparece porque, constantemente, esta función se actualiza
+        revive(3, "veneno");//este "metodo" se puede poner en el update, pero no es necesario.
+        //
+
+    }
+    int revive(int amenaza = 1, string estado = "nulo", int rondas = 0)//se ejecutará cuando lo llammes. Puedes declarar una variable local, la cual solo se usará en este método.
+        //ten en cuenta que ES OBLIGATORIO poner a estas variables un dato o valor, puesto que, sin ellos, las variables locales no funcionan.
+        
+    {
+        int carro = amenaza + rondas;
+        return carro;// devuelve el valor de la variable "carro"a la variable del metodo "revive" (se puede poner la variable, por ejemplo, "int" en vez de "void")
+        //
 
     }
 }

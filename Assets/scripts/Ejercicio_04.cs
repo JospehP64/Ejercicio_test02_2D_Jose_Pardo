@@ -56,11 +56,14 @@ public class Ejercicio_04 : MonoBehaviour
 
     void ConstruirNombre()
     {
-        string PonerNombre()
-        {
-            string nombre = "";
-            return nombre;
-        }
+        string nombre;
+        string apellido;
+        int edad;
+        //return nombre;
+        //return apellido;
+       // return edad;
+        //¡¡¡URGENTE: TERMINAR DEL EJERCICIO 4.2 AL 7!!!
+
     }
 
 

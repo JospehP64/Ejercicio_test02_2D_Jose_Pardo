@@ -12,6 +12,9 @@ public class Ejercicio_03 : MonoBehaviour
     [SerializeField] int Valor01;
     [SerializeField] int EXP;
     [SerializeField] float Radio;
+    [SerializeField] float VelocidadMedia;
+    [SerializeField] float alturaTriangulo;
+    [SerializeField] float PerimetroTriangulo;//El perímetro es lo mismo que la base de la circunferencia
 
 
     int LVL = 1;
@@ -49,6 +52,17 @@ public class Ejercicio_03 : MonoBehaviour
         Debug.Log("El área de alcance del enemigo es de " + AreaDeCircunferencia);
         Debug.Log("--------------------------------");
         //EJERCICIO 3.6
+        float VelocidadEnMetros = VelocidadMedia * 100;
+
+        Debug.Log("Tu velocidad es de " + VelocidadEnMetros + " m/h (" + VelocidadMedia + " Km/h)");
+        Debug.Log("--------------------------------");
+        //EJERCICIO 3.7
+        float areaTriangulo = alturaTriangulo * PerimetroTriangulo / 2;
+        Debug.Log("El área de alcance del enemigo es de " + areaTriangulo +" m²");
+        
+
+
+
 
     }
 

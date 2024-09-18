@@ -215,6 +215,22 @@ public class Ejercicio_2_1 : MonoBehaviour
         int carro = amenaza + rondas;
         return carro;// devuelve el valor de la variable "carro"a la variable del metodo "revive" (se puede poner la variable, por ejemplo, "int" en vez de "void")
         //
-
+        //RECUERDA: while sirve para repetir una misma acción hasta que se NO cumpla una condición.
+        //for sirve para repetir lo mismo cogiendo una variable y, bajo una condición, realizar una acción varias veces (en el ejemplo de clase, contar la misma variable)
+        //hasta que NO se cumpla la condición
+        //ejemplos:
+        //while (vidas > 0)
+        //{
+            //Debug.org("Aun tengo " + vidas+" vidas");
+        //}
+        //
+        //for (int A = 0; A > 100; A--)
+        //{
+        //debug.org("Aun Tengo " + A + " segundos");
+        //}
+        //PARA FOR: (VARIABLE; CONDICIÓN; ACCIÓN)
+        //{
+        //ACCION QUE SE REPITE DADA LAS CONDICIONES (¡NO CONFUNDIR CON LA ACCION DENTRO DE FOR!)
+        //}
     }
 }

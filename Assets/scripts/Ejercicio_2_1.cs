@@ -186,7 +186,7 @@ public class Ejercicio_2_1 : MonoBehaviour
         //RECUERDA: para poder calcular un numero par o impar, tienes que usar en if el  cociente (%) (el resto sería /) de esta forma if (variable % dato == dato)
         //por ejemplo: cuando usas "if (dias % 7 == 1)", estás comprobando el número impar de la semana (es decir, el martes, lunes); pero, cuando usas "if (días % 7 == 0), estás comprobando el número par de la semana (domingo)
         
-
+        //EJERCICIO 3.1
 
     }
 

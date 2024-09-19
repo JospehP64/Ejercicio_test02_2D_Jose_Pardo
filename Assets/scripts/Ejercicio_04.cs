@@ -11,7 +11,11 @@ public class Ejercicio_04 : MonoBehaviour
     [SerializeField] float altura;
     [SerializeField] float lado_largo;
     [SerializeField] float lado_ancho;
-    
+    [SerializeField] float velocidadEnKM = 10;
+    float areaMoneda = area;
+    float areaMoneda02 = area02;
+    float areaMoneda03 = area03;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +33,29 @@ public class Ejercicio_04 : MonoBehaviour
 
         Debug.Log("------------------------------");
         Debug.Log("El 3º enemigo tiene un área de " + area03 + " m²");
+        
 
         //EJERCICIO 4.2
+        var (nombre, apellido, edad) = ConstruirNombre();
+        Debug.Log("Mi nombre es " + nombre + " " + apellido + " y tengo " + edad + " años");
 
-        
+        //EJERCICIO 4.3
+        var (cantidad, moneda) = Convertir();
+        if (moneda == "euros")
+        {
+            Debug.Log("Se han convertido los dólares seleccionados a " + cantidad + " " + moneda);
+        }
+        else
+        {
+            Debug.Log("Se han convertido los dólares seleccionados a " + cantidad + " " + moneda);
+        }
+
+        //EJERCICIO 4.4
+        float velocidadEnM = ConvertirVelocidad();
+        Debug.Log(velocidadEnKM + " Km/h es igual a " + velocidadEnM + " m/h.");
+
+        //EJERCICIO 4.5
+
     }
 
     float CalcularAreaCirculo(float radio)
@@ -54,19 +77,61 @@ public class Ejercicio_04 : MonoBehaviour
         return area03;
     }
 
-    void ConstruirNombre()
+      (string, string, int) ConstruirNombre()
     {
-        string nombre;
-        string apellido;
-        int edad;
-        //return nombre;
-        //return apellido;
-       // return edad;
-        //¡¡¡URGENTE: TERMINAR DEL EJERCICIO 4.2 AL 7!!!
+        string nombre = "Dario";
+        string apellido = "Patrán";
+        int edad = 20;
+        return (nombre, apellido, edad);
+        //recuerda: Para que se puedan usar varias variables a la vez, necesitas poner en parentesis y separado por comas (no comillas ;) todas las variables que
+        //vas a usar. Y, para poder usar las variables fuera del método, primero tienes que devolver el valor con return y () con comas; después, fuera del método,
+        //tienes que poner var (variables en comas)
 
     }
 
+    (float, string) Convertir()
+    {
+        string moneda = "dolar";
+        float cantidad = 50;
+        if (moneda == "euro")
+        {
+            cantidad = cantidad / 0.90f;
 
+        }
+        else
+        {
+            cantidad = cantidad / 1.11f;
+        }
+        return (cantidad, moneda);
+    }
+
+    float ConvertirVelocidad()
+    {
+        float velocidadEnM = 0;
+        
+        velocidadEnM = velocidadEnKM * 100;
+        
+        
+        return (velocidadEnM);
+    }
+
+    (float, string) ConvertirFiguraAMoneda(float areaMoneda = 1)
+    {
+       
+
+        string moneda = "dolar";
+        float cantidad = 50;
+        if (moneda == "euro")
+        {
+            cantidad = cantidad / 0.90f;
+
+        }
+        else
+        {
+            cantidad = cantidad / 1.11f;
+        }
+        return (cantidad, moneda);
+    }
     // Update is called once per frame
     void Update()
     {

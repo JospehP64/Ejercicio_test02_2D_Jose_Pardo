@@ -12,9 +12,9 @@ public class Ejercicio_04 : MonoBehaviour
     [SerializeField] float lado_largo;
     [SerializeField] float lado_ancho;
     [SerializeField] float velocidadEnKM = 10;
-    float areaMoneda = area;
-    float areaMoneda02 = area02;
-    float areaMoneda03 = area03;
+    //float areaMoneda = area;
+    //float areaMoneda02 = area02;
+    //float areaMoneda03 = area03;
 
     // Start is called before the first frame update
     void Start()
